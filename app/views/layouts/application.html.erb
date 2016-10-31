@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Little Market</title>
+  <link href="/css/style.css" media="all" rel="stylesheet" type="text/css" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="page-header">
+    <h1>My Little Market</h1>
+  </div>
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">My Little Market</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a class=" glyphicon glyphicon-home" href="/"></a></li>
+        <li><%= link_to 'Women', products_path %></li>
+        <% @categories.each do |category| %>
+        <li>
+          <%= link_to category.name, '/categories/' +  category.id.to_s %>
+        </li>
+        <% end %>
+        <li><a>Contact us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <%= current_user.first_name + " " + current_user.last_name %>
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to ' My Account', '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user" %></li>
+              <li><%= link_to ' Edit my Profile', '/users/' + current_user.id.to_s + '/edit', class: "glyphicon glyphicon-edit"%></li>
+              <% if current_user && current_user.role == "Admin" %>
+              <li><%= link_to ' Create a product', new_product_path%></li>
+              <li><%= link_to 'Categories', categories_path %></li>
+              <li><%= link_to 'Buyers', users_path %></li>
+              <% end %>
+              <li class="divider"></li>
+              <li><%= link_to " Logout", logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-log-out" %></li>
+            </ul>
+          </li>
+          <% else %>
+          <li><%= link_to " Login", login_path, class: "glyphicon glyphicon-log-in" %></li>
+          <li><%= link_to " Signup", signup_path, class: "glyphicon glyphicon-user" %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+    <!-- <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">My Little Market</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a class=" glyphicon glyphicon-home" href="/"></a></li>
+          <li><%= link_to 'Women', products_path %></li>
+          <li><a>Contact us</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <%= current_user.first_name + " " + current_user.last_name %>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to ' My Account', '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user" %></li>
+                <li><%= link_to ' Edit my Profile', '/users/' + current_user.id.to_s + '/edit', class: "glyphicon glyphicon-edit"%></li>
+                <% if current_user && current_user.role == "Admin" %>
+                <li><%= link_to ' Create a product', new_product_path%></li>
+                <li><%= link_to 'Categories', categories_path %></li>
+                <li><%= link_to 'Buyers', users_path %></li>
+                <% end %>
+                <li class="divider"></li>
+                <li><%= link_to " Logout", logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-log-out" %></li>
+              </ul>
+            </li>
+            <% else %>
+            <li><%= link_to " Login", login_path, class: "glyphicon glyphicon-log-in" %></li>
+            <li><%= link_to " Signup", signup_path, class: "glyphicon glyphicon-user" %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+ -->
+
+    <div class="container-fluid">
+      <p id="notice"><%= notice %></p>
+
+      <!-- <div class="menu"> -->
+        <!-- Menu icon -->
+        <!-- <div class="icon-close">
+          <i class="glyphicon glyphicon-remove"></i>
+        </div> -->
+        <!-- Menu -->
+        <!-- <ul>
+          <li id="title_menu"><%= link_to 'Women', products_path %></li>
+          <li><%= link_to 'Contact Us' %></li>
+
+          <% @categories.each do |category| %>
+          <li>
+            <%#= link_to category.name, '/categories/' +  category.id.to_s %>
+          </li>
+          <% end %>
+        </ul>
+      </div> -->
+
+      <!-- Main body -->
+      <div class="container">
+        <!-- <div class="icon-menu">
+          <i class="glyphicon glyphicon-th-list"></i> Menu
+        </div> -->
+        <%= yield %>
+      </div>
+
+    </div>
+
+    <script src="/js/script.js" type="text/javascript"></script>
+  </body>
+  </html>

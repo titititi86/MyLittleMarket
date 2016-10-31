@@ -1,0 +1,26 @@
+<!-- <p>
+<strong>Name:</strong>
+<%= @category.name %>
+</p> -->
+
+<h3 class="text-center"> <%= @category.name %> </h3>
+
+<div class="row">
+<% Product.where(category_id: @category.id).each do |product| %>
+<div class="col-md-4">
+  <div class="thumbnail">
+    <%= image_tag(product.image, :alt => product.title, class:"img-responsive") %>
+    <div class="caption">
+      <h4 class="pull-right"><%= product.price %> €</h4>
+      <h4><%= link_to product.title, '/products/' + product.id.to_s %></h4>
+      <p><%= product.description %></p>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
+  <br>
+  <div class="row">
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Back', categories_path %>
+</div>

@@ -1,0 +1,12 @@
+<p>
+  <strong>Product:</strong>
+  <%= link_to @sale.product.title, '/products/' + @sale.product.id.to_s %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= link_to @sale.user.first_name + " " + @sale.user.last_name, '/users/' + @sale.user.id.to_s %>
+</p>
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>
