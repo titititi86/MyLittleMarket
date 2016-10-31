@@ -1,19 +1,21 @@
-<div class="page-header">
-  <h2 class="text_center">Contact Us</h2>
-</div>
-
 <aside class="col-md-4">
   <div>
-    <h4 class="text-center">Contact Information</h4><br>
-    <ul style="list-style:none">
-      <li><span class="fa fa-map-marker"></span> 24 rue pasteur 94270 Le Kremlin-Bicêtre</li>
-      <li><span class="fa fa-subway"></span>  Porte d'Italie</li>
-      <li><span class="fa fa-phone"></span> 01 02 03 04 05</li>
-      <li><span class="fa fa-envelope"></span><a href="mailto:inticar.khaldi@coding-academy.fr"> inticar.khaldi@coding-academy.fr</a></li>
-    </ul>
+    <h4>Contact Information</h4><br>
+    <p><span class="fa fa-map-marker"></span> <%#= @contacts.user.postal_address %>
+      24 rue pasteur 94270 Le Kremlin-Bicêtre</p>
+    <p><span class="fa fa-subway"></span>  Porte d'Italie</p>
+    <p><span class="fa fa-phone"></span> 01 02 03 04 05</p>
+    <p><span class="fa fa-envelope"></span><a href="mailto:inticar.khaldi@coding-academy.fr"> inticar.khaldi@coding-academy.fr</a></p>
+    </div>
+    <div style='width: 400px;'>
+      <div id="map" style='width: 400px; height: 300px;'></div>
+    </div>
+  </aside>
+
+  <div class="col-md-7 col-md-offset-1">
+    <div class="col-md-offset-4">
+      <h4 class="text_center">Contact Us</h4><br><br><br><br><br><br><br>
+    </div>
+    <%= render 'form' %>
   </div>
-</aside>
-<div class="col-md-7 col-md-offset-1">
-  <%= render 'form' %>
-</div>
-<!-- <%= link_to 'Back', contacts_path %> -->
+  <!-- <%= link_to 'Back', contacts_path %> -->
