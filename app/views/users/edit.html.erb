@@ -1,7 +1,8 @@
-<h1>Editing User</h1>
+<div class="page-header">
+  <h1>Editing User</h1>
+</div>
 
-
-<%= form_for(@user, html: {class: 'form-horizontal'}) do |f| %>
+<%= form_for(@user, html: {class: 'col-md-5 col-md-offset-4'}) do |f| %>
 <% if @user.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -15,51 +16,37 @@
 <% end %>
 
 <div class="field form-group">
-  <%= f.label :first_name, class: 'col-md-3 control-label' %>
-  <div class="col-md-6">
-    <%= f.text_field :first_name, class: 'form-control', :placeholder => "First name" %>
-  </div>
+  <%= f.label :first_name, class: 'control-label' %>
+  <%= f.text_field :first_name, class: 'form-control', :placeholder => "First name" %>
 </div>
 <div class="field form-group">
-  <%= f.label :last_name, class: 'col-md-3 control-label' %>
-  <div class="col-md-6">
-    <%= f.text_field :last_name, class: 'form-control', :placeholder => "Last name" %>
-  </div>
+  <%= f.label :last_name, class: 'control-label' %>
+  <%= f.text_field :last_name, class: 'form-control', :placeholder => "Last name" %>
 </div>
 <div class="field form-group">
-  <%= f.label :email, class: 'col-md-3 control-label' %>
-  <div class="col-md-6">
-    <%= f.text_field :email, class: 'form-control', :placeholder => "Email" %>
-  </div>
+  <%= f.label :email, class: 'control-label' %>
+  <%= f.text_field :email, class: 'form-control', :placeholder => "Email" %>
 </div>
 <div class="field form-group">
-  <%= f.label :postal_address, class: 'col-md-3 control-label' %>
-  <div class="col-md-6">
-    <%= f.text_field :postal_address, class: 'form-control', :placeholder => "Postal adress" %>
-  </div>
+  <%= f.label :postal_address, class: 'control-label' %>
+  <%= f.text_field :postal_address, class: 'form-control', :placeholder => "Postal adress" %>
 </div>
 <% if  current_user == @user%>
 <div class="field form-group">
-  <%= f.label :password, class: 'col-md-3 control-label' %>
-  <div class="col-md-6">
-    <%= f.password_field :password, class: 'form-control', :placeholder => "Password" %>
-  </div>
+  <%= f.label :password, class: 'control-label' %>
+  <%= f.password_field :password, class: 'form-control', :placeholder => "Password" %>
 </div>
 <% end %>
 
 <% if current_user && current_user.role == "Admin" %>
 <div class="field form-group">
-  <%= f.label :role, class: 'col-md-3 control-label' %>
-  <div class="col-md-6">
-    <%= f.select :role, ["User", "Admin"], class: 'form-control' %>
-  </div>
+  <%= f.label :role, class: 'control-label' %>
+  <%= f.select :role, ["User", "Admin"], class: 'form-control' %>
 </div>
 <% end %>
 
 <div class="actions">
-  <div class="col-md-offset-3 col-md-6">
-    <%= f.submit class: "btn-submit"%>
-  </div>
+  <%= f.submit class: "btn btn-primary btn-block"%>
 </div>
 <% end %>
 
