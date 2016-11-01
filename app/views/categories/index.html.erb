@@ -11,18 +11,15 @@
   <tbody>
     <% @categories.each do |category| %>
     <tr>
-      <% if category.parent_id.blank? %>
       <td><%= category.name %></td>
-      <td><%= link_to 'Show', category, :class => "btn btn-default btn-xs" %>
-        <%= link_to 'Edit', edit_category_path(category), :class => "btn btn-warning btn-xs" %>
-        <%= link_to 'Destroy', category, method: :delete, :class => "btn btn-danger btn-xs", data: { confirm: 'Are you sure?' } %>
+      <td><%= link_to 'Show', category, :class => "btn btn-xs" %>
+        <%= link_to 'Edit', edit_category_path(category), :class => "btn btn-xs" %>
+        <%= link_to 'Destroy', category, method: :delete, :class => "btn btn-xs", data: { confirm: 'Are you sure?' } %>
       </td>
-      <% end %>
     </tr>
     <% end %>
   </tbody>
 </table>
-<%# render partial: 'subcategory', locals: {subcategories: @categories.subcategories} if @categories.subcategories.present? %>
 <br>
 
 <% if current_user %>

@@ -9,7 +9,7 @@
 <% Product.where(category_id: @category.id).each do |product| %>
 <div class="col-md-4">
   <div class="thumbnail">
-    <%= image_tag(product.image, :alt => product.title, class:"img-responsive") %>
+    <%= link_to image_tag(product.image, :alt => product.title, class:"img-responsive"), '/products/' + product.id.to_s %>
     <div class="caption">
       <h4 class="pull-right"><%= product.price %> €</h4>
       <h4><%= link_to product.title, '/products/' + product.id.to_s %></h4>

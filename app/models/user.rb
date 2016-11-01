@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { in: 2..25 }, on: :update, allow_blank: true
 
   has_many :products, dependent: :delete_all
-  has_many :sales, dependent: :delete_all
+  # has_many :sales, dependent: :delete_all
 
 
   def admin?

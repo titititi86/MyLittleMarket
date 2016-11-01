@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :contacts
   get 'home/index'
-
   root 'home#index'
 
   get 'signup' => 'users#new'
@@ -14,6 +12,19 @@ Rails.application.routes.draw do
   resources :products
   resources :categories
   resources :sales
+  resources :contacts
+
+
+  # get 'contacts/list', to: 'contacts#index'
+  # get 'contacts', to: 'contacts#new'
+  # post 'contacts', to: 'contacts#create'
+  # get 'contacts/:id/edit', to: 'contacts#edit'
+  # get 'contacts/:id', to: 'contacts#show'
+  # patch 'contacts/:id', to: 'contacts#update'
+  # put 'contacts/:id', to: 'contacts#update'
+  # delete 'contacts/:id', to: 'contacts#destroy'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
