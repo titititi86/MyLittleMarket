@@ -1,0 +1,29 @@
+<h1>Subscribers</h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Source</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subscribers.each do |subscriber| %>
+    <tr>
+      <td><%= subscriber.name %></td>
+      <td><%= subscriber.email %></td>
+      <td><%= subscriber.source %></td>
+      <td>
+        <%= link_to 'Show', subscriber %>
+        | <%= link_to 'Edit', edit_subscriber_path(subscriber) %><br>
+        <%= link_to 'Delete', subscriber, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

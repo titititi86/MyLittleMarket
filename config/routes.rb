@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'subscribers/index'
+  get 'subscribers/all' => 'subscribers#all_subscribers'
 
   get 'home/index'
   root 'home#index'

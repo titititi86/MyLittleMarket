@@ -28,7 +28,7 @@
                     <%= link_to category.name, '/categories/' +  category.id.to_s %>
                 </li>
                 <% end %>
-                <li><%= link_to 'Sign up to the Newsletter', subscribers_path%></li>
+                <li><%= link_to 'Subscribe to the Newsletter', subscribers_path%></li>
                 <li><%= link_to 'Contact Us', new_contact_path%></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -45,6 +45,7 @@
                         <li><%= link_to ' Create a product', new_product_path%></li>
                         <li><%= link_to 'Categories', categories_path %></li>
                         <li><%= link_to 'Buyers', users_path %></li>
+                        <li><%= link_to 'Subscribers', '/subscribers/all/' %></li>
                         <li><%= link_to 'Sales', sales_path %></li>
                         <li><%= link_to 'Messages', contacts_path %></li>
                         <% end %>
