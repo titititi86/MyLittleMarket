@@ -1,4 +1,4 @@
-<% if current_user && current_user.role == "Admin" %>
+<%# if current_user && current_user.role == "Admin" %>
 <div class="col-md-offset-4 col-md-8">
 
   <p>
@@ -18,14 +18,8 @@
     <strong>Content:</strong>
     <%= @contact.content %>
   </p>
-
-
 </div>
-
-
-
-
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>
-<% end %>
+<%# end %>

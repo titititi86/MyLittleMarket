@@ -35,8 +35,10 @@ table, tr th {
     text-transform: uppercase;
 }
 
-h1, h2 {
-    text-align: center;
+h2 {
+    /*text-align: center;*/
+    font-family: "Didot";
+    color: red;
     /*margin-bottom: 250px;*/
 }
 

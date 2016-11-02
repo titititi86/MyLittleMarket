@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :get_categories
   helper_method :current_user
+  helper_method :require_admin
 
   def get_categories
     # @categories ||= Category.all

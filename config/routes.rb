@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'subscribers/index'
+
   get 'home/index'
   root 'home#index'
 
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :sales
   resources :contacts
+  resources :subscribers
 
 
   # get 'contacts/list', to: 'contacts#index'

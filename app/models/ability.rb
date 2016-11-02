@@ -13,20 +13,19 @@ class Ability
       alias_action :read, :update, :destroy, :to => :rud
 
       can :rud, User, :id => user.id
-      can :crud, Product, :user_id => user.id
-      can :crud, Category, :user_id => user.id
+      can :crud, Product
+      # , :user_id => user.id
+      # can :crud, Category
+      # can :crud, Contact, :user_id => user.id
 
-      
     end
 
-    can :read, User
-    can :create, User
+    # can :read, User
+    # can :create, User
     can :read, Product
-    can :create, Product
+    # can :create, Product
 
   end
-
-
 
 
   # The first argument to `can` is the action you are giving the user

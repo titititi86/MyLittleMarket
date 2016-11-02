@@ -12,9 +12,9 @@
 
     <h4><%= @product.price %> €</h4>
 
-    <% if current_user%>
+    <%# if current_user%>
     <%= render 'saleform' %>
-    <% end %>
+    <%# end %>
 
 
     <%#= button_to "Buy this Product", controller: "sales", action: "create" %>
@@ -83,14 +83,11 @@
 </table> -->
 
 <% if current_user && current_user.role == "Admin" %>
-
 <p class="product-edit">
   <%= link_to "Edit Product", edit_product_path(@product.id) %>
 </p>
-
-<!-- <%= link_to 'Edit', edit_product_path(@product) %> | -->
-<%= link_to 'Back', products_path %>
 <% end %>
+<%= link_to 'Back', products_path %>
 
 
 <div class="page-header"><h4 class="text-center">Related Products</h4></div>

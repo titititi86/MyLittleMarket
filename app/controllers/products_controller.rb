@@ -1,8 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource except: [:create]
-  # before_action :require_user, only: [:edit, :update, :destroy]
-  # before_action :require_admin, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:new, :create, :edit, :update, :detroy]
 
   # GET /products
   # GET /products.json

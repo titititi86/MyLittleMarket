@@ -1,0 +1,20 @@
+<% if cookies[:saved_subscriber] %>
+Thanks for signing up to the newsletter !
+<% else %>
+<%= form_for(@subscriber, html: {class: 'col-md-5 col-md-offset-4'}) do |f| %>
+<h2 class="text_center">Sign up for the newsletter!</h2><br>
+<div class="field form-group">
+  <%= f.text_field :name, class: 'form-control', :placeholder => "Name" %>
+</div>
+<div class="field form-group">
+  <%= f.email_field :email, class: 'form-control', :placeholder => "Email" %>
+</div>
+<div class="field form-group">
+  <%= f.select :source, ["Social Media", "Word of Mouth", "Other"], prompt: "How did you hear about us?",class: 'form-control' %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Subscribe", class: "btn btn-primary btn-block"%>
+</div>
+<% end %>
+<% end %>

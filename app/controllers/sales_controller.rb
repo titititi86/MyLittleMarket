@@ -1,6 +1,8 @@
 class SalesController < ApplicationController
   before_action :set_sale, only: [:show, :edit, :update, :destroy]
   before_filter :require_user
+  before_action :require_admin, only: [:index]
+
 
   # GET /sales
   # GET /sales.json
