@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_admin, only: [:index]
-  load_and_authorize_resource except: [:create]
+  # load_and_authorize_resource except: [:create]
   before_filter :require_user, :only => [:show]
 
   # GET /users
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
-        # redirect_to '/signup',  notice: 'Invalid field.'
+        redirect_to '/signup',  notice: 'Invalid field.'
       end
     end
 

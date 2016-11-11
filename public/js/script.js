@@ -31,45 +31,19 @@ $(function() {
 
 
 function initMap() {
-        var myLatLng = {lat: 48.81533, lng: 2.36317};
+    var myLatLng = {
+        lat: 48.81533,
+        lng: 2.36317
+    };
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: myLatLng
-        });
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: myLatLng
+    });
 
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: 'My Little Market'
-        });
-      }
-
-
-// handler = Gmaps.build('Google');
-// handler.buildMap({
-//     provider: {
-//       disableDefaultUI: true
-//       // pass in other Google Maps API options here
-//     },
-//     internal: {
-//       id: 'map'
-//     }
-//   },
-//   function(){
-//     markers = handler.addMarkers([
-//       {
-//         "lat": 48.81533,
-//         "lng": 2.36317,
-//         "picture": {
-//           // "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-//           "width":  32,
-//           "height": 32
-//         },
-//         "infowindow": "My Little Market"
-//       }
-//     ]);
-//     handler.bounds.extendWith(markers);
-//     handler.fitMapToBounds();
-//   }
-// );
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'My Little Market'
+    });
+}

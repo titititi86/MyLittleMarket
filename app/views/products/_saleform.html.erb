@@ -1,6 +1,7 @@
 <%= form_tag(controller: "sales", action: "create") do |f| %>
 
-<%#= hidden_field_tag :product_id, @product.id %>
+<%= hidden_field_tag :product_id, @product.id %>
+
 <div class="actions">
   <%= submit_tag "Buy this product", class: "btn btn-primary"%>
 </div>

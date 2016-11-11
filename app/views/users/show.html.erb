@@ -1,6 +1,5 @@
 <h2><%= @user.first_name %> <%= @user.last_name %></h2>
 
-
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
@@ -13,10 +12,7 @@
 
 <p>
   <strong>Number of purchases:</strong>
-  <% Sale.where(user_id: @user.id).each do |sale| %>
-  <%#= sale.product.sum(:id) %>
-  <% end %>
-
+  <%= Sale.where(user_id: @user.id).size %>
 </p>
 
 

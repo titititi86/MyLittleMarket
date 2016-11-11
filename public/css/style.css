@@ -21,6 +21,11 @@ ul.ui-autocomplete {
     }
 }
 
+.background {
+  background-image: url(../img/vintage.jpg);
+  background-size: 100% 100%;
+}
+
 table, tr th {
     text-align: center;
 }
@@ -33,6 +38,7 @@ table, tr th {
 .page-header h1 {
     font-family: "Didot";
     text-transform: uppercase;
+    text-align: center;
 }
 
 h2 {

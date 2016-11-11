@@ -1,8 +1,9 @@
-<h2>Clothes</h2>
+
+<h2 class="text-center">Clothes</h2>
 </br>
 <div class="row">
   <% @products.each do |product| %>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="thumbnail">
       <%= link_to image_tag(product.image, :alt => product.title, class:"img-responsive"), '/products/' + product.id.to_s %>
       <div class="caption">

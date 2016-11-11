@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'subscribers/index'
-  get 'subscribers/all' => 'subscribers#all_subscribers'
-
   get 'home/index'
   root 'home#index'
 
@@ -17,6 +14,9 @@ Rails.application.routes.draw do
   resources :sales
   resources :contacts
   resources :subscribers
+
+  get 'subscribers/index'
+  get 'subscribers/all' => 'subscribers#all_subscribers'
 
 
   # get 'contacts/list', to: 'contacts#index'
